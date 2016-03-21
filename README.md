@@ -5,4 +5,4 @@
 * eigenes Follower-System
 
 ## fertige Funktionen
-Bisher ist leider nocht nichts fertig. :(
+Bisher ist leider noch nichts fertig. :(
