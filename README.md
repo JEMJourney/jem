@@ -6,3 +6,7 @@
 
 ## fertige Funktionen
 Bisher ist leider noch nichts fertig. :(
+
+## Aktuelle Version herrunterladen
+
+<a href="https://build.phonegap.com/apps/1978612/install">Download</a>
