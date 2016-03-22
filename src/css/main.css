@@ -25,6 +25,7 @@
 
 	width: 100%;
 	height: 15%;
+	min-height: 124px;
 
 	background-image: linear-gradient(to bottom, #0CA3B8 0px, #028597 100%);
 	background-repeat: repeat-x;
@@ -67,4 +68,27 @@
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
+}
+.mobile-search {
+	display: none;
+}
+@media screen and (orientation: portrait) {
+
+	.menu {
+		width: 95%;
+	}
+
+	.menu-profile {
+		height: 25%;
+	}
+
+	.mobile-search {
+		display: inline;
+		float: right;
+	}
+
+	.default-search {
+		display: none;
+	}
+
 }
