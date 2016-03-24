@@ -1,6 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.jem" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
 
-  <name></name>
+  <name>JEM</name>
+
+  <description>
+  	JEM Journey app to recommend localities to your friends.
+  </description>
+
+  <author email="jem.journey@gmail.com" href="http://jem-travel.com">
+  	Moritz Schramm
+  </author>
+
+  <preference name="phonegap-version" value="cli-6.0.0" />
 
 </widget>
