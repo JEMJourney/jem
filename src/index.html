@@ -13,21 +13,9 @@
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
-	<script src="js/bootstrap.min.js"></script>	
-
-	<script type="text/javascript">
-
-		jQuery(window).load(function() {
-			$(".opener").click(function() {
-				$(".menu").animate({"left":"0px"}, "fast");
-			});
-			$(".closer").click(function() {
-				$(".menu").animate({"left":"-1000px"}, "fast");
-			});
-		});
-		
-	</script>
-
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+	
 </head>
 
 <body>
@@ -36,6 +24,10 @@
 
 		<div class="navbar-brand opener">
 			<span class="glyphicon glyphicon-th"></span> JEM
+		</div>
+
+		<div class="navbar-brand brand-search">
+			<span class="glyphicon glyphicon-chevron-left"></span>
 		</div>
 
 		<form class="navbar-form navbar-right default-search" style="margin-right: 10px;" role="search">
@@ -81,6 +73,16 @@
 			<a href="#" class="list-group-item">
 				Deine Orte
 			</a>
+		</div>
+
+	</div>
+
+	<div class="content">
+
+		<div class="content-search">
+
+			Hallo Welt!
+
 		</div>
 
 	</div>

@@ -72,6 +72,16 @@
 .mobile-search {
 	display: none;
 }
+.content {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.content-search {
+	display: none;
+}
+.brand-search {
+	display: none;
+}
 @media screen and (orientation: portrait) {
 
 	.menu {
