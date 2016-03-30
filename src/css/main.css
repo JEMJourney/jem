@@ -82,6 +82,18 @@
 .brand-search {
 	display: none;
 }
+.content-friends {
+	display: none;
+}
+.content-home {
+	display: inline;
+}
+.content-places {
+	display: none;
+}
+.content-commit {
+	display: none;
+}
 @media screen and (orientation: portrait) {
 
 	.menu {
