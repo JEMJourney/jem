@@ -1,0 +1,37 @@
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	color: #535353;
+}
+.menu {
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	background-color: #FAFAFA;
+	width: 25%;
+	height: 100vh;
+	box-shadow: -1px 0px 13px -4px rgba(0,0,0,0.65);
+}
+	.menu a[href="#menu"], .menu a[href="#menuclose"] {
+		position: fixed;
+		top: 20px;
+		right: 30px;
+		text-decoration: none;
+		color: #535353;
+		visibility: visible;
+	}
+	.menu a[href="#menuclose"] {
+		visibility: hidden;
+	}
+	.menu a:hover {
+		color: #848484;
+	}
+	.left {
+		left: 0;
+	}
+	.left a[href="#menu"], .left a[href="#menuclose"]{
+		left: 30px;
+	}
