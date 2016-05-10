@@ -11,9 +11,11 @@ body {
 	top: 0;
 	right: 0;
 	background-color: #FAFAFA;
-	width: 25%;
+	width: calc(25% - 40px);
 	height: 100vh;
 	box-shadow: -1px 0px 13px -4px rgba(0,0,0,0.65);
+	padding-left: 20px;
+	padding-right: 20px;
 }
 	.menu a[href="#menu"], .menu a[href="#menuclose"] {
 		position: fixed;
@@ -32,6 +34,44 @@ body {
 	.left {
 		left: 0;
 	}
-	.left a[href="#menu"], .left a[href="#menuclose"]{
+	.left a[href="#menu"]{
 		left: 30px;
 	}
+	.left a[href="#menuclose"]{
+		left: unset;
+		right: 30px;
+	}
+	.menu .nav {
+		list-style-type: none;
+		padding-left: 0;
+	}
+	.menu .nav li {
+		border-bottom: #B4B3B3 1px solid;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		padding-left: 10px;
+	}
+	.menu .nav li:last-child {
+		border-bottom: none;
+	}
+	.menu .nav li:hover {
+		color: #848484;
+	}
+header {
+}
+	header .title {
+		margin-left: auto;
+		margin-right: auto;
+		width: 20em;
+	}
+	header .title h1 {
+		font-size: 3em;
+	}
+	header .title img {
+		width: 3em;
+		float: left;
+		margin-right: 10px;
+	}
+.content {
+	margin-top: 20%;
+}

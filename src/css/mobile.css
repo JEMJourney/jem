@@ -1,0 +1,27 @@
+@media only screen and (max-width: 1024px) {
+
+	.fa-3x {
+		font-size: 2em;
+	}
+
+	h1 {
+		font-size: 2em;
+	}
+
+}
+
+@media only screen and (orientation: portrait) and (max-width: 768px) {
+
+	.menu {
+		width: calc(80% - 40px);
+	}
+
+}
+
+@media only screen and (orientation: landscape) and (max-width: 1024px) {
+
+	.menu {
+		width: calc(60% - 40px);
+	}
+
+}
