@@ -16,20 +16,22 @@
 							if(file_exists('pages/open/' . $_POST['page'] . '.php')) {
 								include_once 'pages/open/' . $_POST['page'] . '.php';
 							} else {
-								include_once 'pages/default.php';
+								include_once 'pages/open/default.php';
 							}
 						} else {
-							include_once 'pages/default.php';
+							include_once 'pages/open/default.php';
 						}
 					}
 				}
 				die;
 			}
 
+		} else {
+			die;
 		}
 
 	} else {
-
+		
 		if(!$server->verifyResourceRequest(OAuth2\Request::createFromGlobals())) {
 
 			if(isset($_POST['pid'])) {
@@ -40,10 +42,10 @@
 						if(file_exists('pages/open/' . $_POST['page'] . '.php')) {
 							include_once 'pages/open/' . $_POST['page'] . '.php';
 						} else {
-							include_once 'pages/default.php';
+							include_once 'pages/open/default.php';
 						}
 					} else {
-						include_once 'pages/default.php';
+						include_once 'pages/open/default.php';
 					}
 				}
 			}
@@ -62,10 +64,10 @@
 				if(file_exists('pages/logged/' . $_POST['page'] . '.php')) {
 					include_once 'pages/logged/' . $_POST['page'] . '.php';
 				} else {
-					include_once 'pages/default.php';
+					include_once 'pages/logged/default.php';
 				}
 			} else {
-				include_once 'pages/default.php';
+				include_once 'pages/logged/default.php';
 			}
 		}
 

@@ -2,7 +2,12 @@ function statusChangeCallback(response) {
 
 	if(response.status === 'connected') {
 		window.localStorage.setItem('jem_access_token', response.authResponse.accessToken);
+		window.localStorage.setItem('jem_fblogin', true);
+	} else {
+		window.localStorage.setItem('jem_fblogin', false);
 	}
+
+	loadContent();
 
 }
 

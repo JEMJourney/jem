@@ -22,6 +22,12 @@ $('.menu')
 			return;
 		}
 
+		if(href == '#logout') {
+			logout();
+			closeMenu();
+			return;
+		}
+
 	});
 
 function openMenu() {
@@ -40,16 +46,6 @@ function closeMenu() {
 		$('.menu a[href="#menu"]').css('visibility', 'visible');
 	});
 }
-
-//Loading menu items async
-$.post('server/resources.php', { pid: 'menu', access_token: window.localStorage.getItem('jem_access_token') }, function(data, status) {
-
-	$('.menu .nav').html(data);
-
-});
-
-//Loading content
-loadContent();
 
 $('body')
 	.on('click', 'a', function(event) {
@@ -86,14 +82,58 @@ function loadContent(p) {
 		p = getParameterByName("p");
 	}
 
-	$.post("server/resources.php", { pid: 'page', page: p, access_token: window.localStorage.getItem('jem_access_token')}, function(data, status) {
-		if(data == "invalid") {
-			alert("error");
-		} else {
-			$(".content").fadeOut(400, function() {
-				$(".content").html(data);
-				$(".content").fadeIn(400);
-			});
-		}
-    });
+	if(window.localStorage.getItem('jem_fblogin') == 'true') {
+
+		$.post("server/resources.php", { pid: 'page', page: p, access_token: window.localStorage.getItem('jem_access_token'), fblogin: 'true'}, function(data, status) {
+			if(data == "invalid") {
+				alert("error");
+			} else {
+				$(".content").fadeOut(400, function() {
+					$(".content").html(data);
+					$(".content").fadeIn(400);
+				});
+			}
+		});
+
+		$.post('server/resources.php', { pid: 'menu', access_token: window.localStorage.getItem('jem_access_token'), fblogin: 'true' }, function(data, status) {
+
+			$('.menu .nav').html(data);
+
+		});
+
+	} else {
+
+		$.post("server/resources.php", { pid: 'page', page: p, access_token: window.localStorage.getItem('jem_access_token')}, function(data, status) {
+			if(data == "invalid") {
+				alert("error");
+			} else {
+				$(".content").fadeOut(400, function() {
+					$(".content").html(data);
+					$(".content").fadeIn(400);
+				});
+			}
+		});
+
+		$.post('server/resources.php', { pid: 'menu', access_token: window.localStorage.getItem('jem_access_token') }, function(data, status) {
+
+			$('.menu .nav').html(data);
+
+		});
+
+
+	}
+
+}
+
+function logout() {
+	check = window.localStorage.getItem('jem_fblogin');
+	window.localStorage.jem_fblogin = undefined;
+	window.localStorage.accessToken = undefined;
+	if(check == 'true') {
+		FB.logout(function(response) {
+			statusChangeCallback(response);
+		});
+	} else {
+		loadContent();
+	}
 }
